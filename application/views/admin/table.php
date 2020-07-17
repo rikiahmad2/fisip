@@ -1,138 +1,154 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Layanan Akademik | Admin Fisip</title>
-    <!-- BOOTSTRAP STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- MORRIS CHART STYLES-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tagihan</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CUSTOM STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/css/custom.css" rel="stylesheet" />
-    <!-- GOOGLE FONTS-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <!-- TABLE STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
 
-<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Admin Fisip</a>
-            </div>
-            <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;"> Hello (Nama Admin) &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a>
-            </div>
-        </nav>
-        <!-- /. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center">
-                        <img src="<?= base_url() ?>/public/template/assets/img/find_user.png" class="user-image img-responsive" />
-                    </li>
-
-
-                    <li>
-                        <a href="<?= base_url('/Admin') ?>"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-table fa-2x"></i> Table Admin</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </nav>
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper">
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Table Admin</h2>
-                        <h5>Layanan Akademik Fisip</h5>
-
-                    </div>
-                </div>
-                <!-- /. ROW  -->
-                <hr />
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Advanced Tables -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Tables
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover"
-                                        id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Judul Satu</th>
-                                                <th>Judul Dua</th>
-                                                <th>Judul Tiga</th>
-                                                <th>Judul Empat</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="odd gradeX">
-                                                <td>Satu</td>
-                                                <td>Dua</td>
-                                                <td>Tiga</td>
-                                                <td>Empat</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--End Advanced Tables -->
-                    </div>
-                </div>
-
-            </div>
-
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Data Surat Masuk</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="<?= base_url("Home/dashboard/"); ?>">Home</a></li>
+              <li class="breadcrumb-item active">Data Surat Masuk</li>
+            </ol>
+          </div>
         </div>
-        <!-- /. PAGE INNER  -->
-    </div>
-    <!-- /. PAGE WRAPPER  -->
-    <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/jquery.metisMenu.js"></script>
-    <!-- DATA TABLE SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="<?= base_url() ?>/public/template/assets/js/dataTables/dataTables.bootstrap.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#dataTables-example').dataTable();
-        });
-    </script>
-    <!-- CUSTOM SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/custom.js"></script>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+            </div>
+            <!-- /.card-header -->
+            <a href="<?= base_url("Tagihan/tambah/"); ?>" class="btn btn-block btn-primary btn-md col-lg-2" style="margin-top: 20px; margin-left: 25px">Tambah Data</a>
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <th>Jenis Surat Diminta</th>
+                  <th>Nama Mahasiswa</th>
+                  <th>NIM</th>
+                  <th>Jurusan</th>
+                  <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  $i=1;
+                  foreach($data as $row)
+                  {
+
+                    echo "<tr>";
+                    echo "<td>".$row->jenis."</td>";
+                    echo "<td>".$row->nama."</td>";
+                    echo "<td>".$row->nim."</td>";
+                    echo "<td>".$row->jurusan."</td>";
+                    echo '<td>
+                      <a href="'.base_url().'Admin/edit/'.$row->id_notif.'" class="ion-edit text-success" style="font-size: 18px;"> Edit  </a>
 
 
+                      <a href="'.base_url().'Admin/delete/'.$row->id_notif.'" class="ion-android-delete text-danger" onclick="myDelete();" style="font-size: 18px;">  Delete  </a>
+
+
+                      <a href="'.base_url().'Admin/surat/'.$row->id_aktif.'" class="ion-printer" style="font-size: 18px;" > Print</a>
+
+                          </td>';
+                    echo "</tr>";
+
+                      $i++;
+                    }
+                    ?>
+                </tbody>
+
+              
+
+                <tfoot>
+                </tfoot>
+              </table>
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="<?= base_url("assets/"); ?>plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url("assets/"); ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="<?= base_url("assets/"); ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url("assets/"); ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url("assets/"); ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url("assets/"); ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url("assets/"); ?>dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= base_url("assets/"); ?>dist/js/demo.js"></script>
+<!-- overlayScrollbars -->
+<script src="<?= base_url("assets/"); ?>plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": true,
+    });
+  });
+</script>
+
+<script>
+  function myFunction(x){
+   $(".modal-body #bookId").val( x );
+};
+</script>
+
+<script type="text/javascript">
+ function myDelete(){
+    alert("Data Berhasil Di DELETE !!");
+}; 
+</script>
 </body>
-
 </html>

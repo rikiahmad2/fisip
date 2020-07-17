@@ -8,10 +8,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">FISIP UINSGD</a>
+                <a class="navbar-brand" href="">FISIP UINSGD</a>
             </div>
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Hi, (Nama Mahasiswa) &nbsp; <a href="<?= base_url() ?>/logout" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;"><?=$user ?> &nbsp; <a href="<?= base_url() ?>/Admin/logout" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>

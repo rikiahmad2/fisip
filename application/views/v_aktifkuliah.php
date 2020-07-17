@@ -11,36 +11,31 @@
 
 <hr>
 <!-- form -->
-<form>
+<form action="<?=base_url();?>Admin/aktif_kuliah" method ="post" enctype="multipart/form-data">
     <div class="form-group">
         <label>Nama Lengkap</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <input type="text" name="nama" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
     <div class="form-group">
         <label>NIM</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <input type="text" name="nim" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
     <div class="form-group">
         <label>Jurusan</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <input type="text"  name="jurusan" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
     <div class="form-group">
         <label>Semester</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <input type="text" name="semester" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
     <div class="form-group">
-        <label>Tujuan / Keperluan</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <label>Tahun Akademik</label>
+        <input type="text" name="tahun_akademik" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
     <div class="form-group">
-        <label>Tambahan</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>No HP / Whatsapp</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <label>Program</label>
+        <input type="text" name="program" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
 
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" value="upload" class="btn btn-primary">Submit</button>
 </form>

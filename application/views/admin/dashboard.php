@@ -1,91 +1,154 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Layanan Akademik | Admin Fisip</title>
-    <!-- BOOTSTRAP STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- MORRIS CHART STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
-    <!-- CUSTOM STYLES-->
-    <link href="<?= base_url() ?>/public/template/assets/css/custom.css" rel="stylesheet" />
-    <!-- GOOGLE FONTS-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+﻿<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/ion">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="<?= base_url("assets/"); ?>plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Admin Fisip</a>
-            </div>
-            <div style="color: white;
-            padding: 15px 50px 5px 50px;
-            float: right;
-            font-size: 16px;"> Hello <?=$username ?> &nbsp; <a href="<?= base_url('/Admin/logout') ?>" class="btn btn-danger square-btn-adjust">Logout</a>
-            </div>
-        </nav>
-        <!-- /. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="text-center">
-                        <img src="<?= base_url() ?>/public/template/assets/img/find_user.png" class="user-image img-responsive" />
-                    </li>
+    <!-- Content Wrapper. Contains page content -->
 
-
-                    <li>
-                        <a class="" href="#"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('/Admin/table') ?>" ><i class="fa fa-table fa-2x"></i> Table Admin</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper">
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Admin Dashboard</h2>
-                        <h5>Selamat datang pak (Nama Admin) , Love to see you back. </h5>
-                    </div>
-                </div>
-                <hr>
-                <h1>Isi Konten</h1>
-            </div>
-            <!-- /. PAGE INNER  -->
-        </div>
-        <!-- /. PAGE WRAPPER  -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
-    <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/jquery.metisMenu.js"></script>
-    <!-- MORRIS CHART SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="<?= base_url() ?>/public/template/assets/js/morris/morris.js"></script>
-    <!-- CUSTOM SCRIPTS -->
-    <script src="<?= base_url() ?>/public/template/assets/js/custom.js"></script>
+    <!-- /.content-header -->
 
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><?=$surat_masuk ?></h3>
 
+                <p>Surat Masuk</p>
+              </div>
+              <div class="icon">
+                <i class="ion-social-bitcoin-outline"></i>
+              </div>
+              <a href="<?= base_url("Admin/surat_masuk"); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+
+          <div class="col-lg-3 col-6">
+            
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>123</h3>
+
+                <p>Surat Keluar</p>
+              </div>
+              <div class="icon">
+                <i class="ion-social-bitcoin-outline"></i>
+              </div>
+              <a href="<?= base_url("Tagihan/"); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+
+            <!-- /.card -->
+          </section>
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          <section class="col-lg-5 connectedSortable">
+
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="<?= base_url("assets/"); ?>plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="<?= base_url("assets/"); ?>plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url("assets/"); ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="<?= base_url("assets/"); ?>plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="<?= base_url("assets/"); ?>plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="<?= base_url("assets/"); ?>plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="<?= base_url("assets/"); ?>plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="<?= base_url("assets/"); ?>plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="<?= base_url("assets/"); ?>plugins/moment/moment.min.js"></script>
+<script src="<?= base_url("assets/"); ?>plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?= base_url("assets/"); ?>plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="<?= base_url("assets/"); ?>plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="<?= base_url("assets/"); ?>plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url("assets/"); ?>dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="<?= base_url("assets/"); ?>dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= base_url("assets/"); ?>dist/js/demo.js"></script>
 </body>
-
 </html>

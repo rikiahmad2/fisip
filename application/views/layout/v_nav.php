@@ -8,7 +8,7 @@
 
 
              <li>
-                 <a href="<?= base_url() ?>/home"><i class="fa fa-desktop"></i>Halaman Utama</a>
+                 <a href="<?= base_url('Mahasiswa') ?>"><i class="fa fa-desktop"></i>Dashboard</a>
              </li>
 
              <!-- Layanan Persuratan -->
@@ -16,7 +16,7 @@
                  <a href="#"><i class="fa fa-file-text"></i>Layanan Persuratan<span class="fa arrow"></span></a>
                  <ul class="nav nav-second-level">
                      <li>
-                         <a href="<?= base_url() ?>/home/aktifkuliah">Surat Aktif Kuliah</a>
+                         <a href="<?= base_url('Mahasiswa/aktifkuliah') ?>">Surat Aktif Kuliah</a>
                      </li>
                      <li>
                          <a href="<?= base_url() ?>/home/pindahkuliah">Surat Pindah Kuliah</a>
@@ -25,7 +25,7 @@
                          <a href="<?= base_url() ?>/home/lulustahfidz">Surat Lulus Tahfidz</a>
                      </li>
                      <li>
-                         <a href="<?= base_url() ?>/home/izinkp">Surat Izin KP</a>
+                         <a href="<?= base_url() ?>/Mahasiswa/izinkp">Surat Izin KP</a>
                      </li>
                      <li>
                          <a href="<?= base_url() ?>/home/izinkuliahlapangan">Surat Izin Kuliah Lapangan</a>
