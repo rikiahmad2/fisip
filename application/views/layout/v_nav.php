@@ -25,7 +25,7 @@
                          <a href="<?= base_url() ?>/home/lulustahfidz">Surat Lulus Tahfidz</a>
                      </li>
                      <li>
-                         <a href="<?= base_url() ?>/Mahasiswa/izinkp">Surat Izin KP</a>
+                         <a href="<?= base_url() ?>/Mahasiswa/izinkp">Surat Izin Magang</a>
                      </li>
                      <li>
                          <a href="<?= base_url() ?>/home/izinkuliahlapangan">Surat Izin Kuliah Lapangan</a>

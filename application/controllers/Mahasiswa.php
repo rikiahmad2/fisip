@@ -63,7 +63,7 @@ class Mahasiswa extends CI_Controller
 	public function izinkp()
 	{
 		$data = [
-			'title' => 'Surat Izin KP',
+			'title' => 'Surat Izin Magang',
 			'isi' => 'v_izinkp',
 			'user' => $this->session->userdata('username'),
 		];

@@ -59,7 +59,7 @@
                     <h2 class="text-white mt-0">Kamu harus login terlebih dahulu!</h2>
                     <hr class="divider light my-4" />
                     <p class="text-white-50 mb-4">Jika kamu belum mempunyai akun, kamu bisa mendaftar terlebih dahulu</p>
-                    <a class="btn btn-light btn-xl js-scroll-trigger" href="<?= base_url() ?>Home/login">Login</a>
+                    <a class="btn btn-light btn-xl js-scroll-trigger" href="<?= base_url() ?>Home/login_mhs">Login</a>
                 </div>
             </div>
         </div>

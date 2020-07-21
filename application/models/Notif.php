@@ -16,7 +16,7 @@ class Notif extends CI_Model {
     }
 
     public function tambah_data($data){
-        $query = $this->db->query("INSERT INTO notif(jenis,id_aktif) VALUES ('".$data['jenis']."','".$data['id_aktif']."')");
+        $query = $this->db->query("INSERT INTO notif(jenis,id_aktif,id_mahasiswa) VALUES ('".$data['jenis']."','".$data['id_aktif']."','".$data['id_mahasiswa']."')");
 
         $this->db->set($query);
     }
@@ -31,25 +31,32 @@ class Notif extends CI_Model {
         $row = $query->row();
 
         $edit['id_aktif'] = $row->id_aktif;
+        $edit['id_magang'] = $row->id_magang;
         $edit['jenis'] = $row->jenis;
 
         return $edit;
     }
 
     public function join(){
-       $query = $this->db->query("SELECT A.*,B.* FROM aktif_kuliah A INNER JOIN notif B ON A.id_aktif = B.id_aktif");
+       $query = $this->db->query("SELECT A.*,B.* FROM notif A INNER JOIN mahasiswa B ON A.id_mahasiswa = B.id_mahasiswa");
        $hasil = $query->result();
 
         return $hasil;
     }
 
      public function count(){
-        $query = $this->db->query( "SELECT COUNT(nim) AS jumlah FROM aktif_kuliah ");
+        $query = $this->db->query( "SELECT COUNT(id_notif) AS jumlah FROM notif ");
         $row = $query->row();
 
         $edit = $row->jumlah;
 
         return $edit;
+    }
+
+     public function tambah_data_magang($data){
+        $query = $this->db->query("INSERT INTO notif(jenis,id_magang,id_mahasiswa) VALUES ('".$data['jenis']."','".$data['id_magang']."','".$data['id_mahasiswa']."')");
+
+        $this->db->set($query);
     }
 }
 ?>

@@ -66,7 +66,7 @@
         $pdf->Text(20,220,'Surat Keterangan ini dibuat untuk pengajuan','C');
         $pdf -> SetY(215);
         $pdf -> SetX(97);
-        $pdf->Cell(100,7.5,'cek',0,0,'L',False);
+        $pdf->Cell(100,7.5,$data['keperluan'],0,0,'L',False);
         $pdf->Text(20,230,'Demikian, untuk dipergunakan sebagaimana mestinya','C');
         $pdf->Text(150,250,'Bandung, 03 Juli 2020 ','C');
         $pdf->SetFont('Arial','BU',11);

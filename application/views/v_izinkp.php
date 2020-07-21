@@ -11,39 +11,14 @@
 
 <hr>
 <!-- form -->
-<form>
-    <div class="form-group">
-        <label>Nama Lengkap</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+<form action="<?=base_url();?>Admin/izinmagang" method ="post" enctype="multipart/form-data">
+	<div class="form-group">
+        <label>Tujuan Surat</label>
+        <input type="text" name="tujuan" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
     <div class="form-group">
-        <label>NIM</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <label>Di (Nama Instansi)</label>
+        <input type="text" name="di" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
-    <div class="form-group">
-        <label>Jurusan</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Semester</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Periode KP / Waktu Pelaksanaan KP</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Nama Perusahaan / Instansi dan Alamat Kerja Praktik</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Tambahan</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>No HP / Whatsapp</label>
-        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-success">BUAT IDZIN MAGANG</button>
 </form>

@@ -13,29 +13,8 @@
 <!-- form -->
 <form action="<?=base_url();?>Admin/aktif_kuliah" method ="post" enctype="multipart/form-data">
     <div class="form-group">
-        <label>Nama Lengkap</label>
-        <input type="text" name="nama" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <label>Keperluan</label>
+        <input type="text" name="keperluan" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
     </div>
-    <div class="form-group">
-        <label>NIM</label>
-        <input type="text" name="nim" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Jurusan</label>
-        <input type="text"  name="jurusan" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Semester</label>
-        <input type="text" name="semester" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Tahun Akademik</label>
-        <input type="text" name="tahun_akademik" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-    <div class="form-group">
-        <label>Program</label>
-        <input type="text" name="program" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-    </div>
-
     <button type="submit" value="upload" class="btn btn-primary">Submit</button>
 </form>

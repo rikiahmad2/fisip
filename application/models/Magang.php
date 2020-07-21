@@ -1,5 +1,5 @@
 <?php
-class Aktif_kuliah extends CI_Model {
+class Magang extends CI_Model {
     
     function __construct(){
         parent::__construct();
@@ -16,13 +16,13 @@ class Aktif_kuliah extends CI_Model {
     }
 
     public function tambah_data($data){
-        $query = $this->db->query("INSERT INTO aktif_kuliah(keperluan,id_mahasiswa) VALUES ('".$data['keperluan']."','".$data['id_mahasiswa']."')");
+        $query = $this->db->query("INSERT INTO magang(id_mahasiswa,tujuan,di) VALUES ('".$data['id_mahasiswa']."','".$data['tujuan']."','".$data['di']."')");
 
         $this->db->set($query);
     }
 
     public function count($data){
-        $query = $this->db->query( "SELECT COUNT(keperluan) AS jumlah FROM aktif_kuliah WHERE keperluan = '".$data['keperluan']."'");
+        $query = $this->db->query( "SELECT COUNT(id_mahasiswa) AS jumlah FROM magang WHERE id_mahasiswa = '".$data['id_mahasiswa']."'");
         $row = $query->row();
 
         $edit = $row->jumlah;
@@ -31,12 +31,12 @@ class Aktif_kuliah extends CI_Model {
     }
 
      public function delete($data){
-        $query = $this->db->query( "DELETE  from aktif_kuliah WHERE id_aktif = '".$data['id_aktif']."'");
+        $query = $this->db->query( "DELETE  from magang WHERE id_magang = '".$data['id_magang']."'");
         $this->db->set($query);
     }
 
      public function display_edit($data){
-        $query = $this->db->query( "SELECT * from aktif_kuliah WHERE id_aktif = '".$data."'");
+        $query = $this->db->query( "SELECT * from magang WHERE id_aktif = '".$data."'");
         $row = $query->row();
 
         $edit['nama'] = $row->nama;
@@ -45,21 +45,23 @@ class Aktif_kuliah extends CI_Model {
         $edit['semester'] = $row->semester;
         $edit['tahun_akademik'] = $row->tahun_akademik;
         $edit['program'] = $row->program;
+        $edit['tujuan'] = $row->tujuan;
+        $edit['di'] = $row->di;
 
         return $edit;
     }
 
     public function showdata($data){
-        $query = $this->db->query( "SELECT * FROM aktif_kuliah WHERE keperluan = '".$data['keperluan']."' AND id_mahasiswa = '".$data['id_mahasiswa']."'");
+        $query = $this->db->query( "SELECT * FROM magang WHERE id_mahasiswa = '".$data['id_mahasiswa']."'");
         $row = $query->row();
 
-        $edit['id_aktif'] = $row->id_aktif;
+        $edit['id_magang'] = $row->id_magang;
 
         return $edit;
     }
 
     public function join($data){
-        $query = $this->db->query( "SELECT A.*,B.* FROM aktif_kuliah A INNER JOIN mahasiswa B ON A.id_mahasiswa = B.id_mahasiswa WHERE id_aktif = ".$data."");
+        $query = $this->db->query( "SELECT A.*,B.* FROM magang A INNER JOIN mahasiswa B ON A.id_mahasiswa = B.id_mahasiswa WHERE id_magang = ".$data."");
         $row = $query->row();
 
         $edit['nama'] = $row->nama;
@@ -68,7 +70,8 @@ class Aktif_kuliah extends CI_Model {
         $edit['semester'] = $row->semester;
         $edit['tahun_akademik'] = $row->tahun_akademik;
         $edit['program'] = $row->program;
-        $edit['keperluan'] = $row->keperluan;
+        $edit['tujuan'] = $row->tujuan;
+        $edit['di'] = $row->di;
 
         return $edit;
     }

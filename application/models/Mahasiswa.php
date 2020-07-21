@@ -1,5 +1,5 @@
 <?php
-class User extends CI_Model {
+class Mahasiswa extends CI_Model {
     
     function __construct(){
         parent::__construct();
@@ -10,16 +10,20 @@ class User extends CI_Model {
 
     public function login($username, $password){
         $result = "no";
-        $query = $this->db->query("select * from user WHERE username = '".$username."' AND password = '".$password."'");
+        $query = $this->db->query("select * from mahasiswa WHERE nim = '".$username."' AND password = '".$password."'");
 
         $row = $query->row();
 
         if ($query->num_rows() > 0){
             $result = "ok"; 
-            $user['id_user'] = $row->id_user;
-            $user['username'] = $row->username;
+            $user['id_mahasiswa'] = $row->id_mahasiswa;
+            $user['username'] = $row->nim;
             $user['password'] = $row->password;
-            $user['status'] = $row->status;
+            $user['jurusan'] = $row->jurusan;
+            $user['program'] = $row->program;
+            $user['tahun_akademik'] = $row->tahun_akademik;
+            $user['nomor_hp'] = $row->nomor_hp;
+
             $this->session->set_userdata($user);
         }   
         

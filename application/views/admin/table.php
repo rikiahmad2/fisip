@@ -75,13 +75,19 @@
                       <a href="'.base_url().'Admin/edit/'.$row->id_notif.'" class="ion-edit text-success" style="font-size: 18px;"> Edit  </a>
 
 
-                      <a href="'.base_url().'Admin/delete/'.$row->id_notif.'" class="ion-android-delete text-danger" onclick="myDelete();" style="font-size: 18px;">  Delete  </a>
+                      <a href="'.base_url().'Admin/delete/'.$row->id_notif.'" class="ion-android-delete text-danger" onclick="myDelete();" style="font-size: 18px;">  Delete  </a>';
 
-
-                      <a href="'.base_url().'Admin/surat/'.$row->id_aktif.'" class="ion-printer" style="font-size: 18px;" > Print</a>
-
+                      if($row->jenis == "Aktif Kuliah"){
+                       echo' <a href="'.base_url().'Admin/surat/'.$row->id_aktif.'" class="ion-printer" style="font-size: 18px;" > Print</a>
                           </td>';
-                    echo "</tr>";
+                      echo "</tr>";
+                      }
+
+                      if($row->jenis == "Izin Magang"){
+                       echo' <a href="'.base_url().'Admin/surat_magang/'.$row->id_magang.'" class="ion-printer" style="font-size: 18px;" > Print</a>
+                          </td>';
+                      echo "</tr>";
+                      }
 
                       $i++;
                     }

@@ -8,6 +8,7 @@ class Home extends CI_Controller
         $this->load->library('form_validation');
 		$this->load->helper('url');
 		$this->load->model('User');
+        $this->load->model('Mahasiswa');
 		$this->load->library('session');
     }
 
@@ -18,10 +19,6 @@ class Home extends CI_Controller
 
 	public function login()
 	{	
-		$session = $this->session->all_userdata();
-        if(isset($session["username"])){
-            redirect("Admin/" , "refresh");
-        }
 		$this->load->view('login/login');
 	}
 
@@ -29,26 +26,49 @@ class Home extends CI_Controller
 	{
 
 		$login = $this->User->login($this->input->post('username'), $this->input->post('password'));
-        if($login == "ok"){
-           $user = $this->session->userdata('level');
 
-            if($user == 1 ){
+        if($login == "ok"){
             $message = "Login Berhasil !";
             echo "<script type='text/javascript'>alert('$message');</script>";
-            redirect('Admin/', 'refresh');
-        	}
-        	else{
-        	$message = "Login Berhasil !";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-            redirect("/Mahasiswa" , "refresh");
-            }
+            redirect("/Admin" , "refresh");
         }
+
         else{
-           $message = "Password/ Username Salah";
-           echo "<script type='text/javascript'>alert('$message');</script>";
-           redirect('Home/login', 'refresh');
+            $message = "Login Gagal !";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            redirect("/Home/login" , "refresh");
         }
 	}
 	//--------------------------------------------------------------------
+
+    public function login_mhs()
+    {   $session = $this->session->all_userdata();
+        if(isset($session["jurusan"])){
+            redirect("Mahasiswa/" , "refresh");
+        }
+        $session = $this->session->all_userdata();
+        if(isset($session["status"])){
+            redirect("Admin/" , "refresh");
+        }
+        $this->load->view('login/login_mhs');
+    }
+
+    public function submit_login_mhs()
+    {
+
+        $login = $this->Mahasiswa->login($this->input->post('username'), $this->input->post('password'));
+
+        if($login == "ok"){
+            $message = "Login Berhasil !";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            redirect("/Mahasiswa" , "refresh");
+        }
+
+        else{
+            $message = "Login Gagal !";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            redirect("/Home/login_mhs" , "refresh");
+        }
+    }
 
 }

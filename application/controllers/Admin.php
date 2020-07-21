@@ -10,6 +10,7 @@ class Admin extends CI_Controller
 		    $this->load->library('session');
         $this->load->model('Aktif_kuliah');
         $this->load->model('Notif');
+        $this->load->model('Magang');
         $this->load->library('cetak_pdf');
     }
 
@@ -40,12 +41,8 @@ class Admin extends CI_Controller
     }
 
     public function aktif_kuliah(){
-       $input['nama'] =  $this->input->post('nama');
-       $input['nim'] =  $this->input->post('nim');
-       $input['jurusan'] =  $this->input->post('jurusan');
-       $input['semester'] =  $this->input->post('semester');
-       $input['tahun_akademik'] =  $this->input->post('tahun_akademik');
-       $input['program'] =  $this->input->post('program');
+       $input['keperluan'] =  $this->input->post('keperluan');
+       $input['id_mahasiswa'] = $this->session->userdata('id_mahasiswa');
        $input['jenis'] = 'Aktif Kuliah';
 
 
@@ -64,10 +61,7 @@ class Admin extends CI_Controller
            $message = "Tanggapan terkirim, suratmu akan segera d proses :)";
            echo "<script type='text/javascript'>alert('$message');</script>";
            redirect('Mahasiswa/', 'refresh');
-       }
-
-       
-       
+       } 
        
     }
 
@@ -75,7 +69,13 @@ class Admin extends CI_Controller
         $input  = $this->uri->segment('3');
         $hapus = $this->Notif->display_edit($input);
 
+        if($hapus['jenis'] == 'Aktif Kuliah'){
         $this->Aktif_kuliah->delete($hapus);
+        }
+        if($hapus['jenis'] == 'Izin Magang'){
+        $this->Magang->delete($hapus);
+        }
+
         $result['data'] = $this->Notif->delete($input);
 
         redirect('Admin/surat_masuk', 'refresh');
@@ -84,8 +84,41 @@ class Admin extends CI_Controller
     public function surat() { 
 
         $input = $this->uri->segment('3');
-        $result['data'] = $this->Aktif_kuliah->display_edit($input);
+        $result['data'] = $this->Aktif_kuliah->join($input);
         $this->load->view('surat/aktif_kuliah', $result);
+
+    }
+    public function izinmagang(){
+       $input['tujuan'] = $this->input->post('tujuan');
+       $input['di'] = $this->input->post('di');
+       $input['id_mahasiswa'] = $this->session->userdata('id_mahasiswa');
+       $input['jenis'] = 'Izin Magang';
+
+
+       $count = $this->Magang->count($input);
+       if($count > 0){
+           $message = "Data Sudah Ada !!";
+           echo "<script type='text/javascript'>alert('$message');</script>";
+           redirect('Mahasiswa/izinkp', 'refresh');
+       }
+       else {
+
+           $this->Magang->tambah_data($input);
+           $cek = $this->Magang->showdata($input);
+           $input['id_magang'] = $cek['id_magang'];
+           $this->Notif->tambah_data_magang($input);
+
+           $message = "Tanggapan terkirim, suratmu akan segera d proses :)";
+           echo "<script type='text/javascript'>alert('$message');</script>";
+           redirect('Mahasiswa/', 'refresh');
+       } 
+    }
+
+     public function surat_magang() { 
+
+        $input = $this->uri->segment('3');
+        $result['data'] = $this->Magang->join($input);
+        $this->load->view('surat/magang', $result);
 
     }
 
