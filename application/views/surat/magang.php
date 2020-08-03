@@ -32,7 +32,9 @@
         $pdf->Text(35,70,': -','C');
         $pdf->Text(35,75,': Magang Kerja','C');
 
-        $pdf->Text(160,65,' Bandung, 30 Juni 2020','C');
+        $coba['tanggal_rub'] = date('d F Y');
+
+        $pdf->Text(160,65,'Bandung, '.$coba['tanggal_rub'],'C');
 
         $pdf->Text(35,90,'  Kepada Yth,','C');
         $pdf -> SetY(91);

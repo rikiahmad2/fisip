@@ -68,7 +68,9 @@
         $pdf -> SetX(97);
         $pdf->Cell(100,7.5,$data['keperluan'],0,0,'L',False);
         $pdf->Text(20,230,'Demikian, untuk dipergunakan sebagaimana mestinya','C');
-        $pdf->Text(150,250,'Bandung, 03 Juli 2020 ','C');
+        
+        $coba['tanggal_rub'] = date('d F Y');
+        $pdf->Text(150,250,'Bandung, '. $coba['tanggal_rub'],'C');
         $pdf->SetFont('Arial','BU',11);
         $pdf->Text(149,280,'Dr. Muhamad Zuldin, M.Si','C');
         $pdf->SetFont('Arial','',11);

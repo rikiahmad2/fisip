@@ -27,30 +27,6 @@
                      <li>
                          <a href="<?= base_url() ?>/Mahasiswa/izinkp">Surat Izin Magang</a>
                      </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/izinkuliahlapangan">Surat Izin Kuliah Lapangan</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/cutikuliah">Surat Cuti Kuliah</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/ketlulus">Surat Keterangan Lulus</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/pengantarwisuda">Surat Pengantar Wisuda</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/ketmasihkuliah">Surat Keterangan Masih Kuliah (TNI, POLRI, PNS, BUMN)</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/izinpenelitian">Surat TA, Penelitian, Uji Sampel, Permintaan Data</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/downloadtu">Download Surat Selesai Dari TU</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/downloadjurusan">Download Surat Selesai Dari Jurusan</a>
-                     </li>
                      <!-- <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>
                             </li> -->

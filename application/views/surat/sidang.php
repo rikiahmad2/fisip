@@ -130,7 +130,8 @@
         $pdf->Text(145,83,':','C');
         $pdf -> SetY(80);
         $pdf -> SetX(150);
-        $pdf->Cell(60,4,'Bandung, 08 Mei 2020', 0,'L');
+        $coba['tanggal_rub'] = date('d F Y');
+        $pdf->Cell(60,4,'Bandung, '. $coba['tanggal_rub'], 0,'L');
         $pdf->SetFont('Times','B',12);
         $pdf->Text(120,88,'Dekan,','C');
         $pdf->SetFont('Times','',12);

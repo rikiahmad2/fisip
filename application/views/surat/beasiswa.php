@@ -64,7 +64,8 @@
         $pdf->Text(93,160,'sesuai data yang kami dapat dari berbagai sumber.','C');
         $pdf->Text(20,165,'Demikian rekomendasi ini dibuat agar dipergunakan sebagimana mestinya.','C');
 
-        $pdf->Text(140,200,'Bandung, 14 April 2020','L');
+        $coba['tanggal_rub'] = date('d F Y');
+        $pdf->Text(140,200,'Bandung, '.$coba['tanggal_rub'] ,'L');
         $pdf->Text(140,205,'Hormat saya ,','L');
         $pdf->SetFont('Times','B',11);
         $pdf->Text(140,210,'Ketua Jurusan Administrasi Publik','L');
