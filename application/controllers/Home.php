@@ -42,7 +42,8 @@ class Home extends CI_Controller
 	//--------------------------------------------------------------------
 
     public function login_mhs()
-    {   $session = $this->session->all_userdata();
+    {   
+        $session = $this->session->all_userdata();
         if(isset($session["jurusan"])){
             redirect("Mahasiswa/" , "refresh");
         }

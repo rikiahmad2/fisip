@@ -89,11 +89,68 @@
                       echo "</tr>";
                       }
 
+                      if($row->jenis == "Beasiswa"){
+                       echo' <a href="'.base_url().'Admin/surat_beasiswa/'.$row->id_beasiswa.'" class="ion-printer" style="font-size: 18px;" > Print</a>
+                          </td>';
+                      echo "</tr>";
+                      }
+
+                      if($row->jenis == "SK Sidang"){
+                       echo' <a href="#myModal" onclick="myFunction('.$row->id_sk.');" class="ion-printer" data-toggle="modal" style="font-size: 18px;" > Print</a>
+                          </td>';
+                      echo "</tr>";
+                      }
+
                       $i++;
                     }
                     ?>
                 </tbody>
 
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Print Invoice</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="<?=base_url();?>Admin/surat_sksidang" method ="post">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">ID Surat SK</label>
+                            <div></div>
+                            <input type="number" name="bookId" id=bookId value="" readonly />
+                            <div></div>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Dosen Pembimbing 1</label>
+                            <select type="text" name="dp1" class="form-control" placeholder="MASUKAN">
+                              <option value="Drs. H. Ade Hidayat, M.Ag.">Drs. H. Ade Hidayat, M.Ag.</option>
+                              <option value="Yulia Fithriany Rahmah, SP., ME.">Yulia Fithriany Rahmah, SP., ME.</option>
+                            </select>
+                            <div></div>
+                          </div>
+
+                         <div class="form-group">
+                            <label>Dosen Pembimbing 1</label>
+                            <select type="text" name="dp2" class="form-control" placeholder="MASUKAN">
+                              <option value="Drs. H. Ade Hidayat, M.Ag.">Drs. H. Ade Hidayat, M.Ag.</option>
+                              <option value="Yulia Fithriany Rahmah, SP., ME.">Yulia Fithriany Rahmah, SP., ME.</option>
+                            </select>
+                            <div></div>
+                          </div>
+
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               
 
                 <tfoot>
@@ -155,6 +212,12 @@
  function myDelete(){
     alert("Data Berhasil Di DELETE !!");
 }; 
+</script>
+
+<script>
+  function myFunction(x){
+   $(".modal-body #bookId").val( x );
+};
 </script>
 </body>
 </html>

@@ -19,10 +19,10 @@
                          <a href="<?= base_url('Mahasiswa/aktifkuliah') ?>">Surat Aktif Kuliah</a>
                      </li>
                      <li>
-                         <a href="<?= base_url() ?>/home/pindahkuliah">Surat Pindah Kuliah</a>
+                         <a href="<?= base_url('Mahasiswa/beasiswa') ?>">Surat Beasiswa</a>
                      </li>
                      <li>
-                         <a href="<?= base_url() ?>/home/lulustahfidz">Surat Lulus Tahfidz</a>
+                         <a href="<?= base_url('Mahasiswa/sksidang') ?>">SK Sidang</a>
                      </li>
                      <li>
                          <a href="<?= base_url() ?>/Mahasiswa/izinkp">Surat Izin Magang</a>

@@ -32,6 +32,8 @@ class Notif extends CI_Model {
 
         $edit['id_aktif'] = $row->id_aktif;
         $edit['id_magang'] = $row->id_magang;
+        $edit['id_beasiswa'] = $row->id_beasiswa;
+        $edit['id_sk'] = $row->id_sk;
         $edit['jenis'] = $row->jenis;
 
         return $edit;
@@ -55,6 +57,18 @@ class Notif extends CI_Model {
 
      public function tambah_data_magang($data){
         $query = $this->db->query("INSERT INTO notif(jenis,id_magang,id_mahasiswa) VALUES ('".$data['jenis']."','".$data['id_magang']."','".$data['id_mahasiswa']."')");
+
+        $this->db->set($query);
+    }
+
+    public function tambah_data_beasiswa($data){
+        $query = $this->db->query("INSERT INTO notif(jenis,id_beasiswa,id_mahasiswa) VALUES ('".$data['jenis']."','".$data['id_beasiswa']."','".$data['id_mahasiswa']."')");
+
+        $this->db->set($query);
+    }
+
+    public function tambah_data_sksidang($data){
+        $query = $this->db->query("INSERT INTO notif(jenis,id_sk,id_mahasiswa) VALUES ('".$data['jenis']."','".$data['id_sk']."','".$data['id_mahasiswa']."')");
 
         $this->db->set($query);
     }

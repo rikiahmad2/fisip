@@ -11,6 +11,8 @@ class Admin extends CI_Controller
         $this->load->model('Aktif_kuliah');
         $this->load->model('Notif');
         $this->load->model('Magang');
+        $this->load->model('Beasiswa');
+        $this->load->model('Sksidang');
         $this->load->library('cetak_pdf');
     }
 
@@ -65,6 +67,30 @@ class Admin extends CI_Controller
        
     }
 
+    public function sk_sidang(){
+
+     $input['judul'] =  $this->input->post('judul');
+     $input['id_mahasiswa'] = $this->session->userdata('id_mahasiswa');
+     $input['jenis'] = 'SK Sidang';
+
+     $count = $this->Sksidang->count($input);
+     if($count > 0){
+           $message = "Data Sudah Ada !!";
+           echo "<script type='text/javascript'>alert('$message');</script>";
+           redirect('Mahasiswa/sksidang', 'refresh');
+       }
+       else {
+
+           $this->Sksidang->tambah_data($input);
+           $cek = $this->Sksidang->showdata($input);
+           $input['id_sk'] = $cek['id_sk'];
+           $this->Notif->tambah_data_sksidang($input);
+           $message = "Tanggapan terkirim, suratmu akan segera d proses :)";
+           echo "<script type='text/javascript'>alert('$message');</script>";
+           redirect('Mahasiswa/', 'refresh');
+       } 
+    }
+
     public function delete(){
         $input  = $this->uri->segment('3');
         $hapus = $this->Notif->display_edit($input);
@@ -74,6 +100,12 @@ class Admin extends CI_Controller
         }
         if($hapus['jenis'] == 'Izin Magang'){
         $this->Magang->delete($hapus);
+        }
+        if($hapus['jenis'] == 'Beasiswa'){
+        $this->Beasiswa->delete($hapus);
+        }
+        if($hapus['jenis'] == 'SK Sidang'){
+        $this->Sksidang->delete($hapus);
         }
 
         $result['data'] = $this->Notif->delete($input);
@@ -120,6 +152,51 @@ class Admin extends CI_Controller
         $result['data'] = $this->Magang->join($input);
         $this->load->view('surat/magang', $result);
 
+     }
+
+     public function beasiswa() { 
+       $input['nama_beasiswa'] = $this->input->post('nama_beasiswa');
+       $input['id_mahasiswa'] = $this->session->userdata('id_mahasiswa');
+       $input['jenis'] = 'Beasiswa';
+
+
+       $count = $this->Beasiswa->count($input);
+       if($count > 0){
+           $message = "Data Sudah Ada !!";
+           echo "<script type='text/javascript'>alert('$message');</script>";
+           redirect('Mahasiswa/izinkp', 'refresh');
+       }
+       else {
+
+           $this->Beasiswa->tambah_data($input);
+           $cek = $this->Beasiswa->showdata($input);
+           $input['id_beasiswa'] = $cek['id_beasiswa'];
+           $this->Notif->tambah_data_beasiswa($input);
+
+           $message = "Tanggapan terkirim, suratmu akan segera d proses :)";
+           echo "<script type='text/javascript'>alert('$message');</script>";
+           redirect('Mahasiswa/', 'refresh');
+       } 
     }
+
+    public function surat_beasiswa() { 
+
+        $input = $this->uri->segment('3');
+        $result['data'] = $this->Beasiswa->join($input);
+        $this->load->view('surat/beasiswa', $result);
+
+    }
+
+    public function surat_sksidang() { 
+
+        $input['id_sk'] = $this->input->post('bookId');
+        $input['dp1'] = $this->input->post('dp1');
+        $input['dp2'] = $this->input->post('dp2');
+        $this->Sksidang->tambah_dp($input);
+
+        $result['data'] = $this->Sksidang->join($input);
+        $this->load->view('surat/sidang', $result);
+    }
+
 
 }

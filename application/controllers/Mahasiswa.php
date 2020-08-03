@@ -42,20 +42,22 @@ class Mahasiswa extends CI_Controller
 		$this->load->view('layout/v_wrapper', $data);
 	}
 
-	public function pindahkuliah()
+	public function beasiswa()
 	{
 		$data = [
 			'title' => 'Surat Pindah Kuliah',
 			'isi' => 'v_pindahkuliah',
+			'user' => $this->session->userdata('username'),
 		];
 		$this->load->view('layout/v_wrapper', $data);
 	}
 
-	public function lulustahfidz()
+	public function sksidang()
 	{
 		$data = [
 			'title' => 'Surat Lulus Tahfidz',
-			'isi' => 'v_lulustahfidz',
+			'isi' => 'v_sksidang',
+			'user' => $this->session->userdata('username'),
 		];
 		$this->load->view('layout/v_wrapper', $data);
 	}
