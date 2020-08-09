@@ -70,7 +70,7 @@
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="<?= base_url("Login/forgot"); ?>">I forgot my password</a>
+        <a href="<?= base_url("Home/register"); ?>">Register Account</a>
       </p>
     </div>
     <!-- /.login-card-body -->

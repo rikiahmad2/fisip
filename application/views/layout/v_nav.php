@@ -22,9 +22,6 @@
                          <a href="<?= base_url('Mahasiswa/beasiswa') ?>">Surat Beasiswa</a>
                      </li>
                      <li>
-                         <a href="<?= base_url('Mahasiswa/sksidang') ?>">SK Sidang</a>
-                     </li>
-                     <li>
                          <a href="<?= base_url() ?>/Mahasiswa/izinkp">Surat Izin Magang</a>
                      </li>
                      <!-- <li>
@@ -35,61 +32,7 @@
 
              <!-- Ajuan SK -->
              <li>
-                 <a href="<?= base_url() ?>/home/ajuansk"><i class="fa fa-file"></i>Ajuan SK</a>
-             </li>
-
-             <!-- Pendaftaran Ujian Sidang -->
-             <li>
-                 <a href="#"><i class="fa fa-file-text-o"></i>Pendaftaran Ujian Sidang<span class="fa arrow"></span></a>
-                 <ul class="nav nav-second-level">
-                     <li>
-                         <a href="<?= base_url() ?>/home/daftarseminar">Daftar Seminar KP, Proposal, Kolokium, Komprehensif, Munaqosyah</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/uploadsyaratkp">Upload Syarat Seminar KP</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/uploadsyaratkolokium">Upload Syarat Kolokium</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/uploadsyaratmunaqosyah">Upload Syarat Munaqosyah</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/uploadsyaratproposal">Upload Syarat Proposal</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/uploadsyaratkomprehensif">Upload Syarat Komprehensif</a>
-                     </li>
-                 </ul>
-             </li>
-
-             <!-- Transkrip  -->
-             <li>
-                 <a href="#"><i class="fa fa-file-text"></i>Transkrip<span class="fa arrow"></span></a>
-                 <ul class="nav nav-second-level">
-                     <li>
-                         <a href="<?= base_url() ?>/home/ajuantranskrip">Ajuan Transkrip</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/ajuantranslatetranskrip">Ajuan Translate Transkrip</a>
-                     </li>
-                 </ul>
-             </li>
-
-             <!-- Praktek Ibadah, Tilawah dan Tahfidz -->
-             <li>
-                 <a href="#"><i class="fa fa-file-o"></i>Praktek<span class="fa arrow"></span></a>
-                 <ul class="nav nav-second-level">
-                     <li>
-                         <a href="<?= base_url() ?>/home/ibadah">List Kelompok Ibadah</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/tilawah">List Kelompok Tilawah</a>
-                     </li>
-                     <li>
-                         <a href="<?= base_url() ?>/home/tahfidz">List Kelompok Tahfidz</a>
-                     </li>
-                 </ul>
+                 <a href="<?= base_url('Mahasiswa/sksidang') ?>"><i class="fa fa-file"></i>Ajuan SK</a>
              </li>
 
          </ul>

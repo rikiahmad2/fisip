@@ -76,7 +76,7 @@
                         <hr class="divider dark my-4" />
                         <p class="text-muted mb-0">Kamu dapat daftar akun dengan menggunakan NIM kamu, bukan nim temen kamu ya</p>
                         <br><br>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="<?= base_url() ?>/register">DAFTAR SEKARANG</a>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="<?= base_url() ?>Home/register">DAFTAR SEKARANG</a>
                     </div>
                 </div>
             </div>

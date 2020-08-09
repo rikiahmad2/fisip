@@ -72,4 +72,28 @@ class Home extends CI_Controller
         }
     }
 
+    public function register(){
+
+        $this->load->view('login/register');
+    }
+
+    public function register_submit(){
+
+        $input['nama'] = $this->input->post('nama');
+        $input['password'] = $this->input->post('password'); 
+        $input['nim'] = $this->input->post('nim');
+        $input['jurusan'] = $this->input->post('jurusan');
+        $input['program'] = $this->input->post('program');
+        $input['semester'] = $this->input->post('semester'); 
+        $input['tahun'] = $this->input->post('tahun');
+        $input['no'] = $this->input->post('no');
+
+        $result['data'] = $this->Mahasiswa->tambah_data($input);
+
+        $message = "Akun Berhasil Dibuat !!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        redirect("Home/login_mhs" , "refresh");
+
+    }
+
 }

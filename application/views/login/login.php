@@ -68,10 +68,6 @@
       <div class="social-auth-links text-center mb-3">
       </div>
       <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="<?= base_url("Login/forgot"); ?>">I forgot my password</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>

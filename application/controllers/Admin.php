@@ -13,12 +13,14 @@ class Admin extends CI_Controller
         $this->load->model('Magang');
         $this->load->model('Beasiswa');
         $this->load->model('Sksidang');
+         $this->load->model('Surat_Keluar');
         $this->load->library('cetak_pdf');
     }
 
     public function index(){
         $user['username'] = $this->session->userdata('username');
         $count['surat_masuk'] = $this->Notif->count();
+        $count['surat_keluar'] = $this->Surat_Keluar->count();
 
         $this->load->view('admin/navbar');
     	  $this->load->view('admin/dashboard', $count);
@@ -119,6 +121,10 @@ class Admin extends CI_Controller
         $result['data'] = $this->Aktif_kuliah->join($input);
         $this->load->view('surat/aktif_kuliah', $result);
 
+        $input2['id_notif'] = $this->uri->segment('4');
+        $input2['jenis'] = "Aktif Kuliah";
+        $this->Surat_Keluar->tambah_data($input2);
+
     }
     public function izinmagang(){
        $input['tujuan'] = $this->input->post('tujuan');
@@ -152,6 +158,10 @@ class Admin extends CI_Controller
         $result['data'] = $this->Magang->join($input);
         $this->load->view('surat/magang', $result);
 
+        $input2['id_notif'] = $this->uri->segment('4');
+        $input2['jenis'] = "Izin Magang";
+        $this->Surat_Keluar->tambah_data($input2);
+
      }
 
      public function beasiswa() { 
@@ -184,6 +194,10 @@ class Admin extends CI_Controller
         $input = $this->uri->segment('3');
         $result['data'] = $this->Beasiswa->join($input);
         $this->load->view('surat/beasiswa', $result);
+
+        $input2['id_notif'] = $this->uri->segment('4');
+        $input2['jenis'] = "Beasiswa";
+        $this->Surat_Keluar->tambah_data($input2);
 
     }
 

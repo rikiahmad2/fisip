@@ -76,14 +76,14 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>123</h3>
+                <h3><?=$surat_keluar?></h3>
 
                 <p>Surat Keluar</p>
               </div>
               <div class="icon">
                 <i class="ion-social-bitcoin-outline"></i>
               </div>
-              <a href="<?= base_url("Tagihan/"); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>

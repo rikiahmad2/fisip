@@ -29,6 +29,12 @@ class Mahasiswa extends CI_Model {
         
         return $result;
     }
+
+    public function tambah_data($data){
+        $query = $this->db->query("INSERT INTO mahasiswa(nama,password,nim,jurusan,semester,program,tahun_akademik,nomor_hp) VALUES ('".$data['nama']."','".$data['password']."','".$data['nim']."','".$data['jurusan']."','".$data['program']."','".$data['semester']."','".$data['tahun']."','".$data['no']."')");
+
+        $this->db->set($query);
+    }
 }
 
 ?>
