@@ -47,10 +47,6 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-header">
-            </div>
-            <!-- /.card-header -->
-            <a href="<?= base_url("Tagihan/tambah/"); ?>" class="btn btn-block btn-primary btn-md col-lg-2" style="margin-top: 20px; margin-left: 25px">Tambah Data</a>
-            <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <th>Jenis Surat Diminta</th>

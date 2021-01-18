@@ -9,6 +9,9 @@ class Mahasiswa extends CI_Controller
 		$this->load->helper('url');
 		$this->load->model('User');
 		$this->load->library('session');
+		if (check_login() == "no") {
+			redirect('Home/login_mhs');
+		}
     }
 
 	public function index()

@@ -39,10 +39,10 @@
 
       <form action="<?=base_url ('Home/submit_login');?>" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Email" id="username" name="username">
+          <input type="text" class="form-control" placeholder="username" id="username" name="username">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="ion-email"></span>
+              <span class="ion-person"></span>
             </div>
           </div>
         </div>

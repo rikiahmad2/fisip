@@ -13,8 +13,11 @@ class Admin extends CI_Controller
         $this->load->model('Magang');
         $this->load->model('Beasiswa');
         $this->load->model('Sksidang');
-         $this->load->model('Surat_Keluar');
+        $this->load->model('Surat_Keluar');
         $this->load->library('cetak_pdf');
+        if (check_admin() == "no") {
+          redirect('Home/login');
+        }
     }
 
     public function index(){
